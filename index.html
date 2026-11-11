@@ -135,6 +135,51 @@
   @media (max-width: 960px) { .ai-grid { grid-template-columns: 1fr; gap: 36px; } .ai-visual { width: min(300px, 90%); order: -1; } }
   @media (max-width: 600px) { .ai-feats { grid-template-columns: 1fr; } }
 
+  /* ===== Quote wizard ===== */
+  .q-overlay { position: fixed; inset: 0; z-index: 80; background: rgba(5,6,8,.72); backdrop-filter: blur(8px); display: none; align-items: center; justify-content: center; padding: 16px; }
+  .q-overlay.open { display: flex; animation: qfade .25s ease; }
+  @keyframes qfade { from { opacity: 0; } }
+  .q-box { width: min(640px, 100%); max-height: calc(100vh - 32px); overflow: auto; background: linear-gradient(170deg, #1d2024, #121417); border: 1px solid rgba(212,180,106,.3); border-radius: 22px; box-shadow: 0 40px 100px -20px rgba(0,0,0,.9), 0 0 60px -20px var(--gold-glow); animation: qpop .35s cubic-bezier(.2,.8,.2,1); }
+  @keyframes qpop { from { transform: translateY(24px) scale(.97); opacity: 0; } }
+  .q-head { position: sticky; top: 0; z-index: 2; background: rgba(23,25,29,.96); backdrop-filter: blur(8px); padding: 22px 26px 16px; border-bottom: 1px solid var(--line); }
+  .q-head h3 { margin: 0 0 4px; font-size: 24px; font-weight: 900; }
+  .q-head p { margin: 0; color: var(--muted); font-size: 15px; }
+  .q-close { position: absolute; top: 16px; left: 16px; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--text); font-size: 20px; cursor: pointer; }
+  .q-steps { display: flex; gap: 8px; margin-top: 14px; }
+  .q-steps span { flex: 1; height: 4px; border-radius: 2px; background: rgba(255,255,255,.1); transition: background .3s; }
+  .q-steps span.on { background: linear-gradient(90deg, var(--gold-2), var(--gold)); }
+  .q-body { padding: 22px 26px; }
+  .q-step { display: none; }
+  .q-step.on { display: block; animation: qfade .3s; }
+  .q-label { display: block; font-weight: 700; margin: 0 0 10px; }
+  .q-label small { color: var(--muted); font-weight: 400; }
+  .q-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+  .q-chip { padding: 9px 14px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,.03); color: var(--text); font: 500 15px Heebo, Arial; cursor: pointer; transition: .2s; }
+  .q-chip.on { border-color: var(--gold); background: rgba(212,180,106,.16); color: #F3DDA0; }
+  .q-roles { display: grid; gap: 10px; margin-bottom: 8px; }
+  .q-role { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.02); }
+  .q-role b { display: block; font-size: 16px; }
+  .q-role span { color: var(--muted); font-size: 13px; }
+  .q-count { display: flex; align-items: center; gap: 10px; direction: ltr; }
+  .q-count button { width: 36px; height: 36px; border-radius: 10px; border: 1px solid rgba(212,180,106,.4); background: rgba(212,180,106,.08); color: var(--gold); font-size: 20px; cursor: pointer; }
+  .q-count output { min-width: 26px; text-align: center; font-weight: 800; font-size: 18px; }
+  .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .q-field { display: flex; flex-direction: column; gap: 6px; }
+  .q-field.full { grid-column: 1 / -1; }
+  .q-field[hidden], .q-summary[hidden] { display: none; }
+  .q-field label { font-weight: 600; font-size: 14px; color: var(--silver); }
+  .q-field input, .q-field select, .q-field textarea { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); background: rgba(0,0,0,.25); color: var(--text); font: 400 16px Heebo, Arial; outline: none; transition: border-color .2s; color-scheme: dark; }
+  .q-field input:focus, .q-field select:focus, .q-field textarea:focus { border-color: var(--gold); }
+  .q-field textarea { min-height: 84px; resize: vertical; }
+  .q-err { color: #ff8a80; font-size: 14px; min-height: 20px; margin-top: 10px; }
+  .q-foot { position: sticky; bottom: 0; display: flex; gap: 10px; justify-content: space-between; padding: 16px 26px 22px; background: rgba(18,20,23,.97); border-top: 1px solid var(--line); }
+  .q-foot .btn { padding: 12px 20px; }
+  .q-send { display: none; gap: 10px; flex-wrap: wrap; }
+  .q-send.on { display: flex; }
+  .btn-wa { background: #25D366; color: #08240f; }
+  .q-summary { white-space: pre-wrap; background: rgba(0,0,0,.25); border: 1px dashed rgba(212,180,106,.35); border-radius: 12px; padding: 14px; font-size: 14px; color: var(--silver); max-height: 220px; overflow: auto; margin-top: 14px; }
+  @media (max-width: 600px) { .q-grid { grid-template-columns: 1fr; } .q-head, .q-body, .q-foot { padding-left: 18px; padding-right: 18px; } .q-foot .btn { width: auto; flex: 1; } }
+
   /* Magnetic */
   .mag { transition: transform .25s cubic-bezier(.2,.8,.2,1); }
   .hero .wrap { z-index: 2; width: 100%; }
@@ -308,6 +353,7 @@
       <a href="#team">האנשים שלנו</a>
       <a href="#ai">טכנולוגיה</a>
       <a href="#jobs">דרושים</a>
+      <a href="#quote" data-quote>הצעת מחיר</a>
       <a href="#contact">צור קשר</a>
     </nav>
     <a class="btn btn-gold" href="tel:+972505830496">050-5830496</a>
@@ -322,7 +368,7 @@
       <h1><span class="line"><span>אבטחה</span></span><span class="line"><span class="gold-text">ברמה אחרת.</span></span><span class="line ai-line"><span class="ai-text">מונעת בינה מלאכותית.</span></span></h1>
       <p class="lead">מאבטחים חמושים, בודקים ביטחוניים, סדרנים וצוותי התערבות – אנשי מקצוע מיומנים שמגיעים מוכנים לכל תרחיש. אנחנו שומרים על <span class="rotator" id="rot"><span>מבנים</span></span></p>
       <div class="cta">
-        <a class="btn btn-gold" href="https://wa.me/972505830496?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%20%D7%90%D7%91%D7%98%D7%97%D7%94">לקבלת הצעת מחיר</a>
+        <a class="btn btn-gold" href="#quote" data-quote>לקבלת הצעת מחיר</a>
         <a class="btn btn-ghost" href="#services">גלו את השירותים</a>
       </div>
     </div>
@@ -530,8 +576,9 @@
     <h2>הביטחון שלכם.<br><span class="gold-text">המקצוע שלנו.</span></h2>
     <p>צוות בראון זמין עבורכם עכשיו – בכל שעה, בכל מקום בארץ.</p>
     <div class="cta" style="justify-content:center;opacity:1;animation:none">
-      <a class="btn btn-gold" href="tel:+972505830496">התקשרו עכשיו</a>
-      <a class="btn btn-ghost" href="https://wa.me/972505830496">שלחו הודעה</a>
+      <a class="btn btn-gold" href="#quote" data-quote>לקבלת הצעת מחיר</a>
+      <a class="btn btn-ghost" href="tel:+972505830496">התקשרו עכשיו</a>
+      
     </div>
   </div>
 </div>
@@ -544,6 +591,84 @@
     <span><a href="https://www.brown-sc.co.il">כניסת עובדים</a></span>
   </div>
 </footer>
+
+<div class="q-overlay" id="quote" role="dialog" aria-modal="true" aria-labelledby="qTitle">
+  <div class="q-box">
+    <div class="q-head">
+      <button class="q-close" type="button" data-qclose aria-label="סגירה">×</button>
+      <h3 id="qTitle">הצעת מחיר <span class="gold-text">תוך דקה</span></h3>
+      <p id="qSub">כמה פרטים – ונחזור אליכם עם הצעה מותאמת</p>
+      <div class="q-steps"><span class="on"></span><span></span><span></span></div>
+    </div>
+    <form class="q-body" id="qForm" novalidate>
+      <!-- Step 1: what -->
+      <div class="q-step on" data-step="0">
+        <span class="q-label">איזה שירות אתם צריכים?</span>
+        <div class="q-chips" id="qService">
+          <button type="button" class="q-chip" data-v="אבטחת אירוע">אבטחת אירוע</button>
+          <button type="button" class="q-chip" data-v="שמירה ואבטחת מבנה">מבנה / משרדים</button>
+          <button type="button" class="q-chip" data-v="אבטחת מגדל">מגדל</button>
+          <button type="button" class="q-chip" data-v="אבטחת בית חולים">בית חולים</button>
+          <button type="button" class="q-chip" data-v="אבטחת טיול">טיול</button>
+          <button type="button" class="q-chip" data-v="אבטחת אישים">אבטחת אישים</button>
+          <button type="button" class="q-chip" data-v="בקשה מותאמת אישית" id="qOtherChip">✎ משהו אחר / מותאם אישית</button>
+        </div>
+        <div class="q-field" id="qCustomWrap" hidden style="margin:-8px 0 22px">
+          <label for="qCustom">ספרו לנו מה אתם צריכים</label>
+          <textarea id="qCustom" placeholder="לדוגמה: אבטחה לצילומי סרט במשך 3 לילות, 2 מאבטחים חמושים + רכב סיור"></textarea>
+        </div>
+        <span class="q-label">כמה אנשי צוות? <small>(אפשר לשלב)</small></span>
+        <div class="q-roles">
+          <div class="q-role"><div><b>מאבטחים חמושים</b><span>אבטחה ושמירה עם נשק</span></div><div class="q-count" data-role="מאבטחים חמושים"><button type="button" data-d="-1">−</button><output>0</output><button type="button" data-d="1">+</button></div></div>
+          <div class="q-role"><div><b>מאבטחים / שומרים</b><span>ללא נשק</span></div><div class="q-count" data-role="מאבטחים ללא נשק"><button type="button" data-d="-1">−</button><output>0</output><button type="button" data-d="1">+</button></div></div>
+          <div class="q-role"><div><b>בודקים ביטחוניים</b><span>בידוק בכניסות</span></div><div class="q-count" data-role="בודקים ביטחוניים"><button type="button" data-d="-1">−</button><output>0</output><button type="button" data-d="1">+</button></div></div>
+          <div class="q-role"><div><b>סדרנים</b><span>ניהול קהל באירועים</span></div><div class="q-count" data-role="סדרנים"><button type="button" data-d="-1">−</button><output>0</output><button type="button" data-d="1">+</button></div></div>
+          <div class="q-role"><div><b>צוותי התערבות</b><span>תגובה מהירה</span></div><div class="q-count" data-role="צוותי התערבות"><button type="button" data-d="-1">−</button><output>0</output><button type="button" data-d="1">+</button></div></div>
+        </div>
+        <label style="display:flex;gap:8px;align-items:center;color:var(--muted);font-size:14px;margin-top:6px"><input type="checkbox" id="qUnsure" style="accent-color:#D4B46A;width:18px;height:18px"> לא בטוחים בכמות – נשמח להמלצה שלכם</label>
+      </div>
+
+      <!-- Step 2: when & where -->
+      <div class="q-step" data-step="1">
+        <span class="q-label">מתי ואיפה?</span>
+        <div class="q-chips" id="qFreq">
+          <button type="button" class="q-chip on" data-v="חד-פעמי">חד-פעמי</button>
+          <button type="button" class="q-chip" data-v="קבוע / שוטף">קבוע / שוטף</button>
+        </div>
+        <div class="q-grid">
+          <div class="q-field"><label for="qDate">תאריך התחלה</label><input type="date" id="qDate"></div>
+          <div class="q-field"><label for="qDays">מספר ימים / ימים בשבוע</label><input type="text" id="qDays" placeholder="לדוגמה: יום אחד / א׳–ה׳"></div>
+          <div class="q-field"><label for="qFrom">משעה</label><input type="time" id="qFrom"></div>
+          <div class="q-field"><label for="qTo">עד שעה</label><input type="time" id="qTo"></div>
+          <div class="q-field full"><label for="qPlace">מיקום (עיר / כתובת / שם המקום)</label><input type="text" id="qPlace" placeholder="לדוגמה: היכל התרבות, חיפה"></div>
+          <div class="q-field full"><label for="qCrowd">כמות משתתפים / מבקרים צפויה <small style="color:var(--muted)">(לא חובה)</small></label><input type="text" id="qCrowd" inputmode="numeric" placeholder="לדוגמה: 500"></div>
+        </div>
+      </div>
+
+      <!-- Step 3: contact -->
+      <div class="q-step" data-step="2">
+        <span class="q-label">לאן לחזור אליכם?</span>
+        <div class="q-grid">
+          <div class="q-field"><label for="qName">שם מלא *</label><input type="text" id="qName" autocomplete="name"></div>
+          <div class="q-field"><label for="qOrg">חברה / ארגון</label><input type="text" id="qOrg" autocomplete="organization"></div>
+          <div class="q-field"><label for="qPhone">טלפון *</label><input type="tel" id="qPhone" autocomplete="tel" inputmode="tel" dir="ltr" style="text-align:right"></div>
+          <div class="q-field"><label for="qEmail">אימייל</label><input type="email" id="qEmail" autocomplete="email" dir="ltr" style="text-align:right"></div>
+          <div class="q-field full"><label for="qNotes">פרטים נוספים</label><textarea id="qNotes" placeholder="כל מה שחשוב לנו לדעת – סוג האירוע, דרישות מיוחדות, תקציב וכו׳"></textarea></div>
+        </div>
+        <div class="q-summary" id="qSummary" hidden></div>
+      </div>
+      <div class="q-err" id="qErr" role="alert"></div>
+    </form>
+    <div class="q-foot">
+      <button type="button" class="btn btn-ghost" id="qBack" style="visibility:hidden">חזרה</button>
+      <button type="button" class="btn btn-gold" id="qNext">המשך</button>
+      <div class="q-send" id="qSend">
+        <button type="button" class="btn btn-wa" id="qWa">שליחה ב-WhatsApp</button>
+        <button type="button" class="btn btn-ghost" id="qMail">שליחה במייל</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <a class="wa-float" href="https://wa.me/972505830496" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.8.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></a>
 
@@ -676,6 +801,99 @@
       glints = glints.filter(function (g) { var p = (now - g.b) / 700; if (p > 1) return false; star(g.x, g.y, g.r * (0.6 + p * .6), Math.sin(p * Math.PI)); return true; });
       ctx.globalCompositeOperation = 'source-over';
     }
+  })();
+
+  // ===== Quote wizard =====
+  (function quote() {
+    var ov = document.getElementById('quote'), step = 0, steps = ov.querySelectorAll('.q-step'), bars = ov.querySelectorAll('.q-steps span');
+    var next = document.getElementById('qNext'), back = document.getElementById('qBack'), send = document.getElementById('qSend'), err = document.getElementById('qErr');
+    var subs = ['כמה פרטים – ונחזור אליכם עם הצעה מותאמת', 'מתי ואיפה צריך אתכם?', 'כמעט סיימנו – פרטי קשר'];
+    var WA = '972505830496', MAIL = 'office@brown-sc.co.il';
+    function $(id) { return document.getElementById(id); }
+    function open(e) { if (e) e.preventDefault(); ov.classList.add('open'); document.body.style.overflow = 'hidden'; go(0); }
+    function close() { ov.classList.remove('open'); document.body.style.overflow = ''; }
+    document.querySelectorAll('[data-quote]').forEach(function (a) { a.addEventListener('click', open); });
+    ov.addEventListener('click', function (e) { if (e.target === ov || e.target.hasAttribute('data-qclose')) close(); });
+    addEventListener('keydown', function (e) { if (e.key === 'Escape' && ov.classList.contains('open')) close(); });
+    if (location.hash === '#quote') open();
+
+    // chips (service = multi, frequency = single)
+    $('qService').addEventListener('click', function (e) {
+      var b = e.target.closest('.q-chip'); if (!b) return; b.classList.toggle('on');
+      if (b.id === 'qOtherChip') { var on = b.classList.contains('on'); $('qCustomWrap').hidden = !on; if (on) $('qCustom').focus(); }
+    });
+    function custom() { return $('qOtherChip').classList.contains('on') ? $('qCustom').value.trim() : ''; }
+    $('qFreq').addEventListener('click', function (e) { var b = e.target.closest('.q-chip'); if (!b) return; this.querySelectorAll('.q-chip').forEach(function (c) { c.classList.toggle('on', c === b); }); });
+    // counters
+    ov.querySelectorAll('.q-count').forEach(function (c) {
+      var out = c.querySelector('output');
+      c.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; var v = Math.max(0, Math.min(500, (+out.value || 0) + (+b.dataset.d))); out.value = v; out.textContent = v; });
+    });
+
+    function roles() { var r = []; ov.querySelectorAll('.q-count').forEach(function (c) { var n = +c.querySelector('output').textContent; if (n) r.push(c.dataset.role + ': ' + n); }); return r; }
+    function chosen(id) { return [].map.call($(id).querySelectorAll('.q-chip.on'), function (c) { return c.dataset.v; }); }
+    function validate() {
+      err.textContent = '';
+      if (step === 0) {
+        if (!chosen('qService').length) return 'בחרו לפחות שירות אחד';
+        if ($('qOtherChip').classList.contains('on') && !custom()) return 'ספרו לנו בקצרה מה אתם צריכים';
+        if (!roles().length && !$('qUnsure').checked && !custom()) return 'בחרו כמות אנשי צוות, או סמנו שאתם לא בטוחים';
+      }
+      if (step === 1 && !$('qPlace').value.trim()) return 'נשמח לדעת איפה – עיר או כתובת';
+      if (step === 2) {
+        if (!$('qName').value.trim()) return 'נא למלא שם';
+        if ($('qPhone').value.replace(/\D/g, '').length < 9) return 'נא למלא מספר טלפון תקין';
+      }
+      return '';
+    }
+    function go(n) {
+      step = n;
+      steps.forEach(function (s, i) { s.classList.toggle('on', i === n); });
+      bars.forEach(function (b, i) { b.classList.toggle('on', i <= n); });
+      $('qSub').textContent = subs[n];
+      back.style.visibility = n ? 'visible' : 'hidden';
+      next.style.display = n < 2 ? '' : 'none';
+      send.classList.toggle('on', n === 2);
+      err.textContent = '';
+      ov.querySelector('.q-box').scrollTop = 0;
+    }
+    next.addEventListener('click', function () { var m = validate(); if (m) { err.textContent = m; return; } go(step + 1); });
+    back.addEventListener('click', function () { go(step - 1); });
+
+    function fmtDate(v) { if (!v) return ''; var p = v.split('-'); return p[2] + '/' + p[1] + '/' + p[0]; }
+    function message() {
+      var L = [];
+      L.push('*בקשת הצעת מחיר – בראון אבטחה*');
+      L.push('');
+      L.push('*שירות:* ' + chosen('qService').join(', '));
+      if (custom()) L.push('*הבקשה:* ' + custom());
+      var r = roles(); L.push('*צוות:* ' + (r.length ? r.join(' | ') : (custom() ? 'לפי הבקשה' : 'לא בטוחים – מבקשים המלצה')));
+      if (r.length && $('qUnsure').checked) L.push('(פתוחים להמלצה על כמות)');
+      L.push('*תדירות:* ' + chosen('qFreq').join(''));
+      if ($('qDate').value) L.push('*תאריך:* ' + fmtDate($('qDate').value));
+      if ($('qDays').value.trim()) L.push('*ימים:* ' + $('qDays').value.trim());
+      if ($('qFrom').value || $('qTo').value) L.push('*שעות:* ' + ($('qFrom').value || '?') + '–' + ($('qTo').value || '?'));
+      L.push('*מיקום:* ' + $('qPlace').value.trim());
+      if ($('qCrowd').value.trim()) L.push('*משתתפים צפויים:* ' + $('qCrowd').value.trim());
+      L.push('');
+      L.push('*שם:* ' + $('qName').value.trim());
+      if ($('qOrg').value.trim()) L.push('*חברה:* ' + $('qOrg').value.trim());
+      L.push('*טלפון:* ' + $('qPhone').value.trim());
+      if ($('qEmail').value.trim()) L.push('*אימייל:* ' + $('qEmail').value.trim());
+      if ($('qNotes').value.trim()) { L.push(''); L.push('*פרטים נוספים:* ' + $('qNotes').value.trim()); }
+      return L.join('\n');
+    }
+    function done(kind) {
+      var m = validate(); if (m) { err.textContent = m; return null; }
+      var s = $('qSummary'); s.hidden = false; s.textContent = message().replace(/\*/g, '');
+      return message();
+    }
+    $('qWa').addEventListener('click', function () { var m = done(); if (!m) return; window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(m), '_blank'); });
+    $('qMail').addEventListener('click', function () {
+      var m = done(); if (!m) return;
+      var subj = 'בקשת הצעת מחיר – ' + chosen('qService').join(', ') + ' – ' + $('qName').value.trim();
+      location.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(m.replace(/\*/g, ''));
+    });
   })();
 
   // Live clock (control center)
