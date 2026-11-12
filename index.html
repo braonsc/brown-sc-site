@@ -136,19 +136,8 @@
   @media (max-width: 600px) { .ai-feats { grid-template-columns: 1fr; } }
 
   /* ===== Calm static backdrop (replaces the 3D particles) ===== */
-  html { background: #0B0C0E; }
-  body { background: transparent; }
-  body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
-    background:
-      radial-gradient(900px 600px at 85% -10%, rgba(212,180,106,.10), transparent 60%),
-      radial-gradient(700px 500px at -5% 45%, rgba(212,180,106,.05), transparent 60%),
-      linear-gradient(180deg, #121417 0%, #0B0C0E 60%, #0B0C0E 100%); }
-  body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .05;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  html, body { background: #0E0F11; }
   .hero::after { background: none; }
-  .hero::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
-    background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-    background-size: 72px 72px; -webkit-mask-image: radial-gradient(ellipse at 30% 50%, #000 0%, transparent 70%); mask-image: radial-gradient(ellipse at 30% 50%, #000 0%, transparent 70%); }
   .logo3d { animation: none; }
   .logo3d img { box-shadow: 0 40px 90px -30px rgba(0,0,0,.9), 0 0 0 1px rgba(212,180,106,.25); }
 
@@ -344,7 +333,7 @@
   .services .tilt.wide { grid-column: span 3; }
 
   /* Roles */
-  .roles { background: linear-gradient(180deg, rgba(14,15,17,.2), rgba(22,24,27,.55)); }
+  .roles { background: transparent; }
   .role { text-align: center; padding: 38px 22px; }
   .role .icon { margin: 0 auto 18px; width: 74px; height: 74px; border-radius: 50%; }
   .role .icon svg { width: 36px; height: 36px; }
