@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brown-sc.co.il/sitemap.xml
