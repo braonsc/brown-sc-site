@@ -157,6 +157,11 @@
   .aud .btn { align-self: flex-start; }
   @media (max-width: 960px) { .aud-grid { grid-template-columns: 1fr; } .aud { padding: 36px 26px; } }
 
+  /* No scroll-driven motion: content is simply there */
+  .reveal, .reveal.in { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .mf-text .w { color: var(--text) !important; transition: none; }
+  .mf-text .w.gold { color: var(--gold) !important; }
+  .team-visual .draw { stroke-dashoffset: 0 !important; transition: none !important; }
   /* ===== Spacious editorial layout ===== */
   body { font-size: 18px; }
   .wrap { max-width: 1240px; padding: 0 28px; }
@@ -459,13 +464,6 @@
     </div>
   </div>
   <a href="#services" class="scroll-hint" aria-label="גלילה למטה"></a>
-</div>
-
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="ai-text">מערכת AI לניהול ותפעול</span><span>מאבטחים חמושים</span><span>בודקים ביטחוניים</span><span>סדרנים</span><span>צוותי התערבות</span><span>אבטחת אישים</span><span>אבטחת מגדלים</span><span>אבטחת בתי חולים</span><span>אבטחת אירועים</span><span>אבטחת טיולים</span>
-    <span class="ai-text">מערכת AI לניהול ותפעול</span><span>מאבטחים חמושים</span><span>בודקים ביטחוניים</span><span>סדרנים</span><span>צוותי התערבות</span><span>אבטחת אישים</span><span>אבטחת מגדלים</span><span>אבטחת בתי חולים</span><span>אבטחת אירועים</span><span>אבטחת טיולים</span>
-  </div>
 </div>
 
 <section class="manifesto" data-shape="0">
