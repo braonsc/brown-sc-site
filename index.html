@@ -185,6 +185,11 @@
   .mf-text .w { color: rgba(241,242,244,.14); transition: color .4s ease; }
   .mf-text .w.lit { color: var(--text); }
   .mf-text .w.gold.lit { color: var(--gold); }
+  .mf-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 64px; max-width: 1080px; }
+  .mf-pillars div { border-top: 2px solid var(--gold); padding-top: 18px; }
+  .mf-pillars b { display: block; font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+  .mf-pillars span { color: var(--muted, #A9AEB5); font-size: 16px; line-height: 1.7; }
+  @media (max-width: 760px) { .mf-pillars { grid-template-columns: 1fr; gap: 22px; margin-top: 40px; } }
 
   /* Services: editorial numbered list */
   .svc-head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: 70px; }
@@ -468,7 +473,12 @@
 
 <section class="manifesto" data-shape="0">
   <div class="wrap">
-    <p class="mf-text" id="mf">אנחנו לא עוד חברת אבטחה. אנחנו האנשים שעומדים בכניסה, שמזהים את מה שאחרים מפספסים, ושמגיעים ראשונים כשצריך. מאבטחים, בודקים, סדרנים וצוותי התערבות – עם משמעת של שטח, ועם מערכת חכמה שמחזיקה את הכול ביחד.</p>
+    <p class="mf-text" id="mf">בראון היא חברת אבטחה אחרת. חברה צעירה, עם צוות צעיר ונמרץ, שלא עובדת כמו שאר החברות שאתם מכירים – בלי סחבת ובלי "נחזור אליכם". אנחנו שירותיים, זמינים כל הזמן, ועונים בכל שעה. מאבטחים, בודקים, סדרנים וצוותי התערבות – עם משמעת של שטח ומערכת חכמה שמחזיקה את הכול ביחד.</p>
+    <div class="mf-pillars">
+      <div><b>צעירים ונמרצים</b><span>חברה צעירה וצוותים צעירים, רובם אחרי שירות צבאי – עם אנרגיה, מוטיבציה ורעב לעשות את זה הכי טוב.</span></div>
+      <div><b>שירותיים באמת</b><span>מנהל תיק אישי, מענה אנושי ופתרונות מהירים. אתם במרכז – לא הבירוקרטיה.</span></div>
+      <div><b>זמינים כל הזמן</b><span>24/7, גם בלילה, בסופ"ש ובחגים. צריכים צוות בהתראה קצרה? מרימים טלפון ואנחנו שם.</span></div>
+    </div>
   </div>
 </section>
 
@@ -914,7 +924,7 @@
   // ===== Manifesto: split into words, light them up as the paragraph scrolls through =====
   (function manifesto() {
     var el = document.getElementById('mf'); if (!el) return;
-    var gold = ['אבטחה.', 'ראשונים', 'חכמה'];
+    var gold = ['אחרת.', 'צעירה,', 'זמינים'];
     el.innerHTML = el.textContent.split(' ').map(function (w) { return '<span class="w' + (gold.indexOf(w) > -1 ? ' gold' : '') + '">' + w + '</span>'; }).join(' ');
     var ws = el.querySelectorAll('.w');
     if (reduce) { ws.forEach(function (w) { w.classList.add('lit'); }); return; }
