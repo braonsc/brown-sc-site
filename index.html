@@ -361,8 +361,15 @@ nav.scrolled{background:rgba(9,10,12,.82);border-bottom:1px solid var(--hair)}
 #lead input:focus,#lead select:focus,#lead textarea:focus{box-shadow:none;border-bottom-color:var(--gold3)}
 #lead select option{background:#121317}
 #lead .btn{margin-top:10px;background:linear-gradient(120deg,#e9d39b,#c9a659 45%,#a8823a);color:#140f05}
-.c-lines{gap:14px}
-.c-lines a,.c-lines span{font-family:var(--serif);font-size:17px}
+.c-lines{gap:0;margin-top:40px;border-top:1px solid rgba(212,180,106,.16)}
+.cl{display:flex;align-items:center;gap:18px;padding:18px 0;border-bottom:1px solid rgba(212,180,106,.16);color:var(--text);transition:padding .35s ease}
+a.cl:hover{padding-inline-start:8px}
+.cl i{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--hair);display:grid;place-items:center;transition:background .35s,border-color .35s}
+a.cl:hover i{background:rgba(212,180,106,.12);border-color:var(--gold2)}
+.cl svg{width:18px;height:18px;fill:none;stroke:var(--gold3);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.cl small{display:block;font-family:Heebo,sans-serif;font-weight:500;font-size:12px;letter-spacing:.12em;color:var(--gold2);margin-bottom:3px}
+.c-lines .cl > span{display:block;color:inherit}
+.cl b{font-family:var(--serif);font-weight:400;font-size:18px;color:#ece6d6}
 .jobs{border:1px solid rgba(212,180,106,.18);border-radius:0;margin-top:40px}
 
 /* footer */
@@ -506,10 +513,10 @@ footer .brand{font-family:var(--serif)}
       <p class="sec-lead">כמה פרטים, ונחזור אליכם עם הצעה מותאמת.</p>
       <a href="#quote" class="btn btn-gold" data-quote style="margin-top:22px">הצעת מחיר מפורטת תוך דקה ←</a>
       <div class="c-lines">
-        <a href="tel:+972505830496">📞 <span dir="ltr">050-5830496</span></a>
-        <a href="https://wa.me/972505830496">💬 WhatsApp</a>
-        <a href="mailto:info@brown-sc.co.il">✉️ info@brown-sc.co.il</a>
-        <span>📍 הרץ היינריך 3, חיפה</span>
+        <a class="cl" href="tel:+972505830496"><i><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></i><span><small>טלפון</small><b dir="ltr">050-5830496</b></span></a>
+        <a class="cl" href="https://wa.me/972505830496"><i><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></i><span><small>WhatsApp</small><b>שלחו לנו הודעה</b></span></a>
+        <a class="cl" href="mailto:info@brown-sc.co.il"><i><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="M2 6l10 7 10-7"/></svg></i><span><small>אימייל</small><b>info@brown-sc.co.il</b></span></a>
+        <div class="cl"><i><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></i><span><small>משרד ראשי</small><b>הרץ היינריך 3, חיפה</b></span></div>
       </div>
     </div>
     <form id="lead" novalidate>
