@@ -9,7 +9,7 @@
 <meta property="og:description" content="מאבטחים, בודקים ביטחוניים, סדרנים וצוותי התערבות. 24/7 בכל הארץ.">
 <meta property="og:image" content="https://brown-sc.co.il/brown-logo-round.png"><meta property="og:url" content="https://brown-sc.co.il/"><meta property="og:type" content="website"><link rel="canonical" href="https://brown-sc.co.il/">
 <meta name="theme-color" content="#0b0c0e">
-<link rel="icon" href="brown-logo-round.png">
+<link rel="icon" href="brown-logo-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Cinzel:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -423,6 +423,77 @@ nav.scrolled{background:rgba(9,10,12,.86)}
 .links a.on::after,.links a:hover::after{transform:translateX(-50%) rotate(45deg) scale(1)}
 @media (max-width:1180px){.links a{padding:9px 12px;font-size:14px}}
 
+
+/* ===== preview additions ===== */
+.skip{position:fixed;top:-60px;right:16px;z-index:200;background:var(--gold2);color:#111;padding:10px 16px;font-weight:700;transition:top .2s}
+.skip:focus{top:12px}
+:focus-visible{outline:2px solid var(--gold3);outline-offset:3px}
+.pv-banner{position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:150;background:#7a1f1f;color:#fff;font-size:13px;padding:5px 14px;border-radius:0 0 6px 6px}
+.pv-banner button{background:none;border:1px solid #fff8;color:#fff;font:inherit;padding:1px 8px;margin-inline-start:6px;cursor:pointer}
+.pv-n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#e11d48;color:#fff;font:700 13px Heebo;margin-inline-end:8px;vertical-align:middle;box-shadow:0 0 0 3px rgba(225,29,72,.3)}
+.pv-off .pv-n,.pv-off .pv-legend{display:none!important}
+.pv-legend{position:fixed;top:96px;left:16px;z-index:70;width:270px;background:rgba(12,13,16,.95);border:1px solid #e11d4880;padding:16px 18px;font-size:13.5px;line-height:1.6}
+.pv-legend b{display:block;color:#fff;margin-bottom:6px}
+.pv-legend ol{padding-inline-start:18px;color:#cfd2d6}
+.pv-legend .ph-li{color:#fca5a5}
+.ph{display:block;margin-top:12px;font-style:normal;color:#f3dfa2;font-size:15px}
+.ph-note{text-align:center;color:#fca5a5;font-size:14px;margin-top:22px}
+.logos{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(212,180,106,.16);border:1px solid rgba(212,180,106,.16);margin-bottom:34px}
+.logo-ph{background:#0d0e11;height:96px;display:grid;place-items:center;color:#6f6a5c;font-size:14px;letter-spacing:.05em}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.qt{margin:0;padding:34px 30px;border:1px solid var(--hair);background:linear-gradient(160deg,rgba(212,180,106,.07),rgba(13,14,17,.9) 55%);position:relative}
+.qt::before{content:"”";position:absolute;top:6px;left:22px;font:400 80px var(--serif);color:rgba(212,180,106,.35);line-height:1}
+.qt blockquote{font:400 20px/1.6 var(--serif);color:#ece6d6;margin-bottom:22px}
+.qt figcaption b{display:block;font-family:var(--serif);font-weight:500;color:var(--gold3)}
+.qt figcaption span{color:var(--muted);font-size:14px}
+.shot{border:1px solid var(--hair);background:#0d0e11;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.shot-bar{display:flex;gap:6px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--hair);direction:ltr}
+.shot-bar i{width:9px;height:9px;border-radius:50%;background:#3a3d44}
+.shot-bar span{margin-left:12px;font-size:12px;color:#7d828a}
+.shot-body{height:320px;display:grid;place-content:center;justify-items:center;gap:8px;text-align:center;background:repeating-linear-gradient(45deg,rgba(212,180,106,.04) 0 14px,transparent 14px 28px)}
+.shot-body svg{width:46px;height:46px;stroke:var(--gold2);fill:none;stroke-width:1.2}
+.shot-body b{font-family:var(--serif);font-weight:500;font-size:20px}
+.shot-body span{color:#fca5a5;font-size:14px}
+.iq{display:block;padding:34px;border:1px solid var(--hair);background:rgba(9,10,12,.5)}
+.iq-t{display:block;font:500 26px var(--serif);margin-bottom:4px}
+.iq-s{color:var(--muted);font-size:14.5px}
+.iq-steps{display:flex;gap:6px;margin:16px 0 22px}
+.iq-steps i{flex:1;height:3px;background:rgba(255,255,255,.1)}
+.iq-steps i.on{background:linear-gradient(90deg,var(--gold),var(--gold3))}
+.iq-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.iq .q-chip{font-size:15px;padding:10px 16px;display:inline-flex;align-items:center;gap:6px}
+.pen{width:15px;height:15px;stroke:var(--gold3);fill:none;stroke-width:1.6}
+.iq-go{width:100%}
+.pv-foot{padding:70px 0 0}
+.fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.fcols p{color:var(--muted);margin-top:14px;font-size:15px}
+.fcols h4{font:500 18px var(--serif);color:var(--gold3);margin-bottom:14px}
+.fcols a,.fcols span{display:block;color:#b4b8bf;font-size:15px;margin-bottom:9px}
+.fcols a:hover{color:var(--gold3)}
+.fbot{border-top:1px solid rgba(212,180,106,.14);margin-top:46px;padding:22px 24px;color:#6f737a;font-size:13px}
+.a11y{position:fixed;inset:0;z-index:90;background:rgba(5,6,8,.75);backdrop-filter:blur(6px);display:grid;place-items:center;padding:16px}
+.a11y[hidden]{display:none}
+.a11y-box{position:relative;max-width:620px;background:#121317;border:1px solid var(--hair);padding:36px 34px;line-height:1.8}
+.a11y-box h3{font:500 28px var(--serif);margin-bottom:12px}
+.a11y-box p{color:#cfd2d6;margin-bottom:12px}
+.a11y-box u{color:#fca5a5}
+.mbar{display:none}
+@media (max-width:1100px){.pv-legend{display:none}}
+@media (max-width:1020px){.logos{grid-template-columns:repeat(3,1fr)}.quotes{grid-template-columns:1fr}.fcols{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){
+  .wa-float{display:none}
+  .nav-cta{display:none}
+  .nav-in{justify-content:center}
+  .mbar{display:grid;grid-template-columns:1fr 1fr 1.3fr;position:fixed;top:auto;bottom:0;height:auto;inset-inline:0;z-index:65;background:rgba(9,10,12,.96);backdrop-filter:blur(10px);border-top:1px solid var(--hair);padding:8px 8px calc(8px + env(safe-area-inset-bottom));gap:8px}
+  .mbar .pv-n{position:absolute;top:-30px;right:8px}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:6px;padding:12px 6px;border:1px solid var(--hair);color:#efe6cf;font-size:14.5px;font-weight:500}
+  .mbar svg{width:17px;height:17px;fill:none;stroke:var(--gold3);stroke-width:1.6}
+  .mbar .mq{background:linear-gradient(120deg,#e9d39b,#c9a659 45%,#a8823a);color:#140f05;border:0}
+  body{padding-bottom:70px}
+  .fcols{grid-template-columns:1fr}
+  .iq{padding:24px 18px}
+}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .rv{opacity:1;transform:none}.msg{opacity:1;transform:none}
@@ -430,21 +501,22 @@ nav.scrolled{background:rgba(9,10,12,.86)}
 </style>
 </head>
 <body>
+<a class="skip" href="#events">דלג לתוכן הראשי</a>
 <div class="grain" aria-hidden="true"></div><div class="orb a"></div><div class="orb b"></div>
 
 <nav id="nav"><div class="wrap nav-in">
-  <a href="#" class="brand"><span class="ring"><img src="brown-logo-round.png" alt="לוגו בראון אבטחה"></span><span>בראון אבטחה<small class="en">BROWN SECURITY</small></span></a>
+  <a href="#" class="brand"><span class="ring"><img src="brown-logo-192.png" alt="לוגו בראון אבטחה"></span><span>בראון אבטחה<small class="en">BROWN SECURITY</small></span></a>
   <div class="links"><a href="#events">אירועים והופעות</a><a href="#services">שירותים</a><a href="#why">למה בראון</a><a href="#ai">טכנולוגיה</a><a href="#contact">צור קשר</a></div>
   <div class="nav-cta"><button type="button" class="btn btn-ghost call-btn" id="callBtn" aria-label="הצגת מספר הטלפון"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>התקשרו</span></button><a class="tel call-num" id="callNum" href="tel:+972505830496" hidden>050-5830496</a><a href="#quote" class="btn btn-gold" data-quote>הצעת מחיר</a></div>
 </div></nav>
 
 <header class="hero">
-  <div class="hero-bg" aria-hidden="true"><video muted playsinline preload="auto"></video><video muted playsinline preload="none"></video></div>
+  <div class="hero-bg" aria-hidden="true"><video muted playsinline preload="auto" poster="videos/scene-1.jpg"></video><video muted playsinline preload="none"></video></div>
   <div class="hero-shade" aria-hidden="true"></div>
   <div class="wrap">
     <div class="eyebrow hero-eye rv">בראון אבטחה</div>
     <h1 class="rv d1">שומרים עליכם<br><span class="gold">תמיד</span></h1>
-    <p class="lead rv d2">מאבטחים חמושים, בודקים ביטחוניים, סדרנים וצוותי התערבות, מאירועים והופעות ועד מבנים, מגדלים ובתי חולים. חברת אבטחה אחרת: צעירה, שירותית וזמינה כל הזמן.</p>
+    <p class="lead rv d2">אבטחה, בידוק וצוותי התערבות לאירועים, מבנים ומוסדות. 24/7, בכל הארץ.</p>
     <div class="cta-row rv d3">
       <a href="#quote" class="btn btn-gold" data-quote>קבלו הצעת מחיר ←</a>
       <a href="https://wa.me/972505830496" class="btn btn-ghost"><svg class="wa-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>WhatsApp</a>
@@ -473,7 +545,7 @@ nav.scrolled{background:rgba(9,10,12,.86)}
 </div></section>
 
 <section class="band" aria-label="ליווי אמנים">
-  <video class="band-v" muted playsinline loop preload="none" data-src="videos/scene-2.mp4" aria-hidden="true"></video>
+  <video class="band-v" muted playsinline loop preload="none" poster="videos/scene-2.jpg" data-src="videos/scene-2.mp4" aria-hidden="true"></video>
   <div class="band-shade" aria-hidden="true"></div>
   <div class="wrap band-in rv">
     <div class="eyebrow">ליווי אמנים ואישים</div>
@@ -500,7 +572,7 @@ nav.scrolled{background:rgba(9,10,12,.86)}
 <section id="why"><div class="wrap">
   <div class="sec-head center rv"><div class="eyebrow">למה בראון</div><h2>חברת אבטחה <span class="gold">אחרת</span></h2></div>
   <div class="why">
-    <div class="w rv"><div class="ln"></div><b>צעירים ונמרצים</b><span>צוותים צעירים, רובם אחרי שירות צבאי.</span></div>
+    <div class="w rv"><div class="ln"></div><b>צעירים ומיומנים</b><span>צוותי שטח אחרי שירות צבאי, עם ניהול מקצועי ומנוסה.</span></div>
     <div class="w rv d1"><div class="ln"></div><b>שירותיים באמת</b><span>מענה אנושי ואישי, בלי סחבת.</span></div>
     <div class="w rv d2"><div class="ln"></div><b>זמינים 24/7</b><span>גם בלילה, בסופ"ש ובחגים, בכל הארץ.</span></div>
     <div class="w rv d3"><div class="ln"></div><b>ליווי והדרכה</b><span>צוותי שטח שמקבלים הדרכה וליווי שוטפים.</span></div>
@@ -547,22 +619,46 @@ nav.scrolled{background:rgba(9,10,12,.86)}
         <div class="cl"><i><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></i><span><small>משרד ראשי</small><b>הרץ היינריך 3, חיפה</b></span></div>
       </div>
     </div>
-    <form id="lead" novalidate>
-      <div class="f2"><input id="fName" placeholder="שם מלא *" autocomplete="name"><input id="fPhone" placeholder="טלפון *" inputmode="tel" autocomplete="tel"></div>
-      <select id="fSvc"><option value="">איזה שירות?</option><option>אבטחת אירוע / הופעה</option><option>ליווי אמנים / אבטחת אישים</option><option>בודקים וסדרנים</option><option>צוות התערבות</option><option>מבנה / מגדל / מפעל</option><option>בית חולים</option><option>טיול</option><option>אחר</option></select>
-      <textarea id="fMsg" placeholder="ספרו לנו על האירוע או המקום: תאריך, מיקום, כמות משתתפים…"></textarea>
-      <div class="err" id="fErr" role="alert"></div>
-      <button class="btn btn-wa" style="padding:16px">שליחה ב-WhatsApp ←</button>
+    <form id="lead" novalidate class="iq">
+      <b class="iq-t">בואו נבנה לכם צוות</b>
+      <span class="iq-s">שלב 1 מתוך 3 · איזה שירות אתם צריכים?</span>
+      <div class="iq-steps"><i class="on"></i><i></i><i></i></div>
+      <div class="iq-chips">
+        <button type="button" class="q-chip" data-v="אבטחת אירוע">אבטחת אירוע</button>
+        <button type="button" class="q-chip" data-v="אבטחת אישים">אבטחת אישים</button>
+        <button type="button" class="q-chip" data-v="שמירה ואבטחת מבנה">מבנה / משרדים</button>
+        <button type="button" class="q-chip" data-v="אבטחת מגדל">מגדל</button>
+        <button type="button" class="q-chip" data-v="אבטחת בית חולים">בית חולים</button>
+        <button type="button" class="q-chip" data-v="אבטחת טיול">טיול</button>
+        <button type="button" class="q-chip" data-v="בקשה מותאמת אישית"><svg class="pen" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>משהו אחר</button>
+      </div>
+      <button type="button" class="btn btn-gold iq-go">המשך ←</button>
     </form>
   </div></div>
-  <div class="jobs rv"><div><b>רוצים להצטרף לצוות?</b><div style="color:var(--muted)">מגייסים מאבטחים ומאבטחות, שומרים ושומרות, בכל הארץ.</div></div><a class="btn btn-ghost" href="mailto:hr@brown-sc.co.il">hr@brown-sc.co.il</a></div>
 </div></section>
 
-<footer><div class="wrap f-in">
-  <a href="#" class="brand" style="font-size:16px"><img src="brown-logo-round.png" alt="" style="width:34px;height:34px">בראון אבטחה בע"מ</a>
-  <span>© בראון אבטחה בע"מ · אבטחה שאפשר לסמוך עליה. 24/7, בכל הארץ.</span>
-  <a href="https://www.brno.co.il/login">כניסת עובדים</a>
-</div></footer>
+<footer class="pv-foot"><div class="wrap fcols">
+  <div><a href="#" class="brand"><span class="ring" style="width:48px;height:48px"><img src="brown-logo-192.png" alt="" style="width:41px!important;height:41px!important"></span><span>בראון אבטחה<small>BROWN SECURITY</small></span></a><p>אבטחה שאפשר לסמוך עליה. 24/7, בכל הארץ.</p></div>
+  <div><h4>שירותים</h4><a href="#events">אבטחת אירועים והופעות</a><a href="#services">אבטחת אישים</a><a href="#services">מבנים, מגדלים ומפעלים</a><a href="#services">בתי חולים</a><a href="#services">צוותי התערבות</a></div>
+  <div><h4>יצירת קשר</h4><a href="tel:+972505830496" dir="ltr" style="text-align:right">050-5830496</a><a href="mailto:info@brown-sc.co.il">info@brown-sc.co.il</a><span>הרץ היינריך 3, חיפה</span><span>פריסה ארצית · 24/7</span></div>
+  <div><h4>בראון</h4><a href="mailto:hr@brown-sc.co.il">דרושים: הצטרפו לצוות</a><a href="https://www.brno.co.il/login">כניסת עובדים</a><a href="#" id="a11yLink">הצהרת נגישות</a></div>
+</div><div class="wrap fbot">© בראון אבטחה בע"מ</div></footer>
+
+<div class="a11y" id="a11y" role="dialog" aria-modal="true" aria-labelledby="a11yT" hidden><div class="a11y-box">
+  <button type="button" class="q-close" data-a11y-close aria-label="סגירה">×</button>
+  <h3 id="a11yT">הצהרת נגישות</h3>
+  <p>בראון אבטחה בע"מ פועלת להנגיש את האתר לכלל הציבור, כולל אנשים עם מוגבלות, בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות ולתקנות הנגישות, לפי התקן הישראלי 5568 ברמה AA.</p>
+  <p><b>מה עשינו:</b> ניווט במקלדת, דילוג לתוכן, ניגודיות צבעים, תיאורים לתמונות, הפסקת אנימציות למי שהגדיר זאת במכשיר, וטפסים עם תוויות.</p>
+  <p>נתקלתם בבעיית נגישות? נשמח לשמוע ולתקן: <a href="tel:+972505830496" dir="ltr">050-5830496</a> · <a href="mailto:info@brown-sc.co.il">info@brown-sc.co.il</a></p><p style="color:var(--muted);font-size:14px">ההצהרה עודכנה בנובמבר 2026.</p>
+</div></div>
+
+<nav class="mbar" aria-label="פעולות מהירות">
+  <a href="tel:+972505830496"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>חייגו</a>
+  <a href="https://wa.me/972505830496"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>WhatsApp</a>
+  <a href="#quote" data-quote class="mq">הצעת מחיר</a>
+</nav>
+
+
 
 <div class="q-overlay" id="quote" role="dialog" aria-modal="true" aria-labelledby="qTitle">
   <div class="q-box">
@@ -683,6 +779,16 @@ const $ = id => document.getElementById(id);
   const io2=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.remove('on')); const a=map.get(e.target.id); if(a) a.classList.add('on'); } }),{rootMargin:'-45% 0px -50% 0px'});
   map.forEach((a,id)=>{ const el=document.getElementById(id); if(el) io2.observe(el); });
   new IntersectionObserver(es=>{ if(es[0].isIntersecting) links.forEach(l=>l.classList.remove('on')); }).observe(document.querySelector('.hero h1')); })();
+
+/* ---------- preview wiring ---------- */
+$('a11yLink').onclick = e => { e.preventDefault(); $('a11y').hidden = false; };
+$('a11y').onclick = e => { if (e.target.id === 'a11y' || e.target.hasAttribute('data-a11y-close')) $('a11y').hidden = true; };
+document.querySelectorAll('.iq .q-chip').forEach(c => c.onclick = () => c.classList.toggle('on'));
+document.querySelector('.iq-go').onclick = () => {
+  const picked = [...document.querySelectorAll('.iq .q-chip.on')].map(c => c.dataset.v);
+  document.querySelectorAll('#qService .q-chip').forEach(c => c.classList.toggle('on', picked.includes(c.dataset.v)));
+  document.querySelector('[data-quote]').click();
+};
 
 /* ---------- page ---------- */
 $("callBtn").addEventListener("click", () => { $("callBtn").hidden = true; document.querySelector(".nav-in").classList.add("num-on"); $("callNum").hidden = false; $("callNum").focus(); });
