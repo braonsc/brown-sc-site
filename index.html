@@ -413,6 +413,16 @@ nav.scrolled{background:rgba(9,10,12,.86)}
 .links a:hover{color:var(--gold3)}
 @media (max-width:640px){.ring{width:48px;height:48px}.ring img{width:41px!important;height:41px!important;border-width:2.5px}}
 
+
+/* nav links: glass capsule with active state */
+.links{gap:2px;padding:5px;border:1px solid rgba(212,180,106,.22);background:rgba(12,13,16,.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:2px;font-size:15px;letter-spacing:.03em;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+.links a{position:relative;padding:9px 18px;color:#cfc8b6;border-radius:1px;transition:color .3s,background .3s}
+.links a::after{content:"";position:absolute;bottom:4px;left:50%;width:4px;height:4px;right:auto;background:var(--gold2);transform:translateX(-50%) rotate(45deg) scale(0);transition:transform .35s ease}
+.links a:hover{color:#f3e7c4;background:rgba(212,180,106,.07)}
+.links a.on{color:var(--gold3);background:linear-gradient(180deg,rgba(212,180,106,.16),rgba(212,180,106,.05))}
+.links a.on::after,.links a:hover::after{transform:translateX(-50%) rotate(45deg) scale(1)}
+@media (max-width:1180px){.links a{padding:9px 12px;font-size:14px}}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .rv{opacity:1;transform:none}.msg{opacity:1;transform:none}
@@ -424,7 +434,7 @@ nav.scrolled{background:rgba(9,10,12,.86)}
 
 <nav id="nav"><div class="wrap nav-in">
   <a href="#" class="brand"><span class="ring"><img src="brown-logo-round.png" alt="לוגו בראון אבטחה"></span><span>בראון אבטחה<small class="en">BROWN SECURITY</small></span></a>
-  <div class="links"><a href="#services">שירותים</a><a href="#events">אירועים והופעות</a><a href="#why">למה בראון</a><a href="#ai">Brown AI</a><a href="#contact">צור קשר</a></div>
+  <div class="links"><a href="#events">אירועים והופעות</a><a href="#services">שירותים</a><a href="#why">למה בראון</a><a href="#ai">טכנולוגיה</a><a href="#contact">צור קשר</a></div>
   <div class="nav-cta"><button type="button" class="btn btn-ghost call-btn" id="callBtn" aria-label="הצגת מספר הטלפון"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>התקשרו</span></button><a class="tel call-num" id="callNum" href="tel:+972505830496" hidden>050-5830496</a><a href="#quote" class="btn btn-gold" data-quote>הצעת מחיר</a></div>
 </div></nav>
 
@@ -667,6 +677,12 @@ const $ = id => document.getElementById(id);
   new IntersectionObserver(es=>{ const on = es[0].isIntersecting;
     if (on && !v.getAttribute('src')) { v.src = v.dataset.src; }
     if (on && !reduce) v.play().catch(()=>{}); else v.pause(); }, {rootMargin:'200px'}).observe(v); })();
+
+/* ---------- nav scrollspy ---------- */
+(function(){ const links=[...document.querySelectorAll('.links a')]; const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+  const io2=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.remove('on')); const a=map.get(e.target.id); if(a) a.classList.add('on'); } }),{rootMargin:'-45% 0px -50% 0px'});
+  map.forEach((a,id)=>{ const el=document.getElementById(id); if(el) io2.observe(el); });
+  new IntersectionObserver(es=>{ if(es[0].isIntersecting) links.forEach(l=>l.classList.remove('on')); }).observe(document.querySelector('.hero h1')); })();
 
 /* ---------- page ---------- */
 $("callBtn").addEventListener("click", () => { $("callBtn").hidden = true; document.querySelector(".nav-in").classList.add("num-on"); $("callNum").hidden = false; $("callNum").focus(); });
