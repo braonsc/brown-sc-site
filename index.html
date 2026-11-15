@@ -258,11 +258,13 @@ h1{font-weight:500;font-size:clamp(48px,7.6vw,104px);line-height:1.02;letter-spa
 h2{font-weight:500;font-size:clamp(34px,4.6vw,60px);line-height:1.08;letter-spacing:-.3px}
 h3{font-weight:500}
 .gold{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:normal}
-.eyebrow{font-family:var(--caps);font-size:12.5px;letter-spacing:.38em;color:var(--gold2);text-transform:uppercase;display:inline-flex;align-items:center;gap:16px;margin-bottom:20px}
-.eyebrow::before,.eyebrow::after{content:"";width:38px;height:1px;background:linear-gradient(90deg,transparent,var(--gold2))}
+.eyebrow{font-family:Heebo,sans-serif;font-weight:500;font-size:15px;letter-spacing:.14em;color:var(--gold2);display:inline-flex;align-items:center;gap:14px;margin-bottom:18px}
+.eyebrow::before,.eyebrow::after{content:"";width:30px;height:1px;background:linear-gradient(90deg,transparent,var(--gold2))}
 .eyebrow::after{transform:scaleX(-1)}
 .sec-head:not(.center) .eyebrow::after,#ai .eyebrow::after,.contact .eyebrow::after{display:none}
-.sec-lead{font-size:18.5px;line-height:1.75;color:#b4b8bf}
+.sec-lead{font-size:18.5px;line-height:1.75;color:#b4b8bf;text-wrap:pretty}
+.sec-head:not(.center) .sec-lead{max-width:780px}
+h1,h2,blockquote,.band p,.hero .lead{text-wrap:balance}
 section{padding:140px 0}
 
 /* nav */
@@ -392,7 +394,7 @@ footer .brand{font-family:var(--serif)}
   .contact{padding:40px 22px;outline-offset:4px}
   .legal{padding:26px 22px;outline-offset:4px}
   .brand{font-size:17px;gap:10px;white-space:nowrap}.brand small{letter-spacing:.2em;font-size:9px}
-  .eyebrow{letter-spacing:.28em;gap:10px}.eyebrow::before,.eyebrow::after{width:22px}
+  .eyebrow{letter-spacing:.1em;gap:10px;font-size:14px}.eyebrow::before,.eyebrow::after{width:20px}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -414,7 +416,7 @@ footer .brand{font-family:var(--serif)}
   <div class="hero-bg" aria-hidden="true"><video muted playsinline preload="auto"></video><video muted playsinline preload="none"></video></div>
   <div class="hero-shade" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="eyebrow hero-eye rv">Brown Security · Israel</div>
+    <div class="eyebrow hero-eye rv">בראון אבטחה</div>
     <h1 class="rv d1">שומרים עליכם.<br><span class="gold">תמיד.</span></h1>
     <p class="lead rv d2">מאבטחים חמושים, בודקים ביטחוניים, סדרנים וצוותי התערבות, מאירועים והופעות ועד מבנים, מגדלים ובתי חולים. חברת אבטחה אחרת: צעירה, שירותית וזמינה כל הזמן.</p>
     <div class="cta-row rv d3">
@@ -434,7 +436,7 @@ footer .brand{font-family:var(--serif)}
 </div></div>
 
 <section id="events" class="events"><div class="wrap">
-  <div class="sec-head center rv"><div class="eyebrow">Events &amp; Shows</div><h2>אירועים והופעות, <span class="gold">מקצה לקצה</span></h2><p class="sec-lead">עוד לפני שהקהל מגיע ועד שהאחרון עוזב בשלום, הצוות של בראון נמצא בכל נקודה.</p></div>
+  <div class="sec-head center rv"><div class="eyebrow">אבטחת אירועים</div><h2>אירועים והופעות, <span class="gold">מקצה לקצה</span></h2><p class="sec-lead">עוד לפני שהקהל מגיע ועד שהאחרון עוזב בשלום, הצוות של בראון נמצא בכל נקודה.</p></div>
   <div class="ev-grid">
     <div class="ev rv"><h3>ליווי אמנים</h3><p>מאבטחים צמודים לזמרים ולאמנים, מהרכב לקלעים, לבמה וחזרה.</p></div>
     <div class="ev rv d1"><h3>עמדות בידוק</h3><p>בודקים ביטחוניים בכניסות: מגנומטר, בידוק תיקים וניהול תורים.</p></div>
@@ -448,14 +450,14 @@ footer .brand{font-family:var(--serif)}
   <video class="band-v" muted playsinline loop preload="none" data-src="videos/scene-2.mp4" aria-hidden="true"></video>
   <div class="band-shade" aria-hidden="true"></div>
   <div class="wrap band-in rv">
-    <div class="eyebrow">Artist &amp; VIP Protection</div>
+    <div class="eyebrow">ליווי אמנים ואישים</div>
     <blockquote>נוכחות שקטה.<br><span class="gold">ביטחון מלא.</span></blockquote>
     <p>ליווי צמוד לאמנים ולאישים, בדיסקרטיות ובמקצועיות, מהרגע שהם יוצאים מהרכב ועד שהם חוזרים אליו.</p>
   </div>
 </section>
 
 <section id="services"><div class="wrap">
-  <div class="sec-head rv"><div class="eyebrow">Services</div><h2>כל שירותי <span class="gold">האבטחה</span></h2><p class="sec-lead">מאבטחים חמושים, שומרים, בודקים, סדרנים וצוותי התערבות, לכל סוג של מקום ואירוע.</p></div>
+  <div class="sec-head rv"><div class="eyebrow">השירותים שלנו</div><h2>כל שירותי <span class="gold">האבטחה</span></h2><p class="sec-lead">מאבטחים חמושים, שומרים, בודקים, סדרנים וצוותי התערבות, לכל סוג של מקום ואירוע.</p></div>
   <div class="cards">
     <div class="card rv"><div class="ico"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div><h3>אבטחת אירועים</h3><p>כנסים, הופעות, הפקות ואירועים פרטיים ועסקיים.</p></div>
     <div class="card rv d1"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>אבטחת אישים</h3><p>ליווי צמוד לאמנים, אנשי עסקים, אישי ציבור ומשפחות.</p></div>
@@ -470,7 +472,7 @@ footer .brand{font-family:var(--serif)}
 </div></section>
 
 <section id="why"><div class="wrap">
-  <div class="sec-head center rv"><div class="eyebrow">Why Brown</div><h2>חברת אבטחה <span class="gold">אחרת</span></h2></div>
+  <div class="sec-head center rv"><div class="eyebrow">למה בראון</div><h2>חברת אבטחה <span class="gold">אחרת</span></h2></div>
   <div class="why">
     <div class="w rv"><div class="ln"></div><b>צעירים ונמרצים</b><span>צוותים צעירים, רובם אחרי שירות צבאי.</span></div>
     <div class="w rv d1"><div class="ln"></div><b>שירותיים באמת</b><span>מענה אנושי ואישי, בלי סחבת.</span></div>
@@ -485,7 +487,7 @@ footer .brand{font-family:var(--serif)}
 
 <section id="ai" style="padding-top:20px"><div class="wrap split">
   <div class="rv">
-    <div class="eyebrow">Brown AI</div>
+    <div class="eyebrow">טכנולוגיה</div>
     <h2>מאחורי הקלעים: <span class="gold">ניהול חכם</span></h2>
     <p class="sec-lead">את הצוותים שלנו מנהלת מערכת AI שפיתחנו, כדי שבכל משמרת יהיו האנשים הנכונים במקום הנכון.</p>
     <ul class="feat">
@@ -508,7 +510,7 @@ footer .brand{font-family:var(--serif)}
 <section id="contact"><div class="wrap">
   <div class="contact rv"><div class="c-grid">
     <div>
-      <div class="eyebrow">Let's talk</div>
+      <div class="eyebrow">צור קשר</div>
       <h2>מתכננים אירוע?<br><span class="gold">דברו איתנו</span></h2>
       <p class="sec-lead">כמה פרטים, ונחזור אליכם עם הצעה מותאמת.</p>
       <a href="#quote" class="btn btn-gold" data-quote style="margin-top:22px">הצעת מחיר מפורטת תוך דקה ←</a>
