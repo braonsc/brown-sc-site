@@ -12,7 +12,7 @@
 <link rel="icon" href="brown-logo-round.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Cinzel:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SecurityService","name":"בראון אבטחה בע\"מ","alternateName":"Brown Security Ltd.","telephone":"+972-50-583-0496","email":"info@brown-sc.co.il","address":{"@type":"PostalAddress","streetAddress":"הרץ היינריך 3","addressLocality":"חיפה","addressCountry":"IL"},"areaServed":"IL","openingHours":"Mo-Su 00:00-23:59","logo":"https://brown-sc.co.il/brown-logo-round.png","url":"https://brown-sc.co.il/","makesOffer":["שמירה ואבטחת מבנים","אבטחת מגדלים","אבטחת בתי חולים","אבטחת אירועים","אבטחת טיולים","אבטחת אישים","צוותי התערבות","בודקים ביטחוניים","סדרנים"]}
 </script>
@@ -246,6 +246,148 @@ footer{padding:44px 0 40px;border-top:1px solid var(--line);color:var(--muted);f
   .q-summary { white-space: pre-wrap; background: rgba(0,0,0,.25); border: 1px dashed rgba(212,180,106,.35); border-radius: 12px; padding: 14px; font-size: 14px; color: var(--silver); max-height: 220px; overflow: auto; margin-top: 14px; }
   @media (max-width: 520px) { .q-grid { grid-template-columns: 1fr; } .q-foot { flex-wrap: wrap; } .q-foot .btn { flex: 1; } }
 
+
+/* ================= luxury layer ================= */
+:root{--r:4px;--hair:rgba(212,180,106,.28);--serif:"Frank Ruhl Libre",Heebo,serif;--caps:"Cinzel",serif;
+  --grad:linear-gradient(100deg,#f6e7bd 0%,#d9bd7a 38%,#b08a3e 70%,#e9d7a6 100%)}
+body{font-weight:300;letter-spacing:.01em}
+.grain{position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.045;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.orb{opacity:.14}
+h1,h2,h3,blockquote,.st b,.w b,.legal b,.brand>span,.jobs b{font-family:var(--serif)}
+h1{font-weight:500;font-size:clamp(48px,7.6vw,104px);line-height:1.02;letter-spacing:-.5px}
+h2{font-weight:500;font-size:clamp(34px,4.6vw,60px);line-height:1.08;letter-spacing:-.3px}
+h3{font-weight:500}
+.gold{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:normal}
+.eyebrow{font-family:var(--caps);font-size:12.5px;letter-spacing:.38em;color:var(--gold2);text-transform:uppercase;display:inline-flex;align-items:center;gap:16px;margin-bottom:20px}
+.eyebrow::before,.eyebrow::after{content:"";width:38px;height:1px;background:linear-gradient(90deg,transparent,var(--gold2))}
+.eyebrow::after{transform:scaleX(-1)}
+.sec-head:not(.center) .eyebrow::after,#ai .eyebrow::after,.contact .eyebrow::after{display:none}
+.sec-lead{font-size:18.5px;line-height:1.75;color:#b4b8bf}
+section{padding:140px 0}
+
+/* nav */
+nav.scrolled{background:rgba(9,10,12,.82);border-bottom:1px solid var(--hair)}
+.brand{font-weight:500;font-size:21px;gap:14px}
+.brand small{font-family:var(--caps);letter-spacing:.32em;font-size:10px;margin-top:3px}
+.brand img{box-shadow:0 0 0 1px var(--hair)}
+.links{gap:34px;font-size:14.5px;letter-spacing:.04em}
+.links a{position:relative;padding:6px 0}
+.links a::after{content:"";position:absolute;inset-inline:0;bottom:0;height:1px;background:var(--gold2);transform:scaleX(0);transition:transform .35s ease}
+.links a:hover::after{transform:scaleX(1)}
+
+/* buttons */
+.btn{border-radius:2px;font-weight:500;letter-spacing:.06em;padding:15px 30px;font-size:15px;position:relative;overflow:hidden}
+.btn-gold{background:linear-gradient(120deg,#e9d39b,#c9a659 45%,#a8823a);color:#140f05;box-shadow:0 10px 30px -12px rgba(212,180,106,.55)}
+.btn-gold::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .7s ease}
+.btn-gold:hover::after{left:120%}
+.btn-gold:hover{transform:translateY(-1px);box-shadow:0 16px 40px -14px rgba(212,180,106,.7)}
+.btn-ghost{border:1px solid var(--hair);background:rgba(10,11,13,.35);backdrop-filter:blur(6px);color:#efe6cf}
+.btn-ghost:hover{border-color:var(--gold2);background:rgba(212,180,106,.08);box-shadow:none}
+.wa-i{width:17px;height:17px;fill:none;stroke:var(--gold3);stroke-width:1.6}
+.call-btn{padding:11px 20px}
+.call-num{border-radius:2px;border-color:var(--hair);font-family:var(--serif);font-size:17px;letter-spacing:.04em}
+.nav-cta .btn-gold{padding:11px 22px}
+
+/* hero */
+.hero{padding:150px 0 120px}
+.hero-eye{color:var(--gold3)}
+.hero .lead{font-size:clamp(17px,1.7vw,20px);line-height:1.8;max-width:620px;margin:28px auto 42px;color:#d0d3d8}
+.hero-bg video.on{opacity:.6}
+.hero-shade{background:
+  radial-gradient(ellipse 60% 55% at 50% 50%,rgba(9,10,12,.5),rgba(9,10,12,.82) 100%),
+  linear-gradient(180deg,rgba(9,10,12,.85) 0,rgba(9,10,12,.15) 25%,rgba(9,10,12,.25) 65%,var(--bg) 100%)}
+.hero-meta{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:54px;font-family:var(--serif);font-size:16px;color:#d8cfb6;letter-spacing:.04em}
+.hero-meta i{width:5px;height:5px;background:var(--gold2);transform:rotate(45deg)}
+.scroll-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);width:1px;height:64px;background:linear-gradient(var(--hair),transparent);overflow:hidden}
+.scroll-cue span{position:absolute;top:-24px;left:0;width:1px;height:24px;background:var(--gold3);animation:cue 2.4s ease-in-out infinite}
+@keyframes cue{to{top:64px}}
+
+/* strip */
+.strip{background:linear-gradient(180deg,rgba(18,19,22,.9),rgba(12,13,15,.9));border-block:1px solid var(--hair)}
+.st{padding:38px 12px;border-inline-start:1px solid rgba(212,180,106,.14)}
+.st b{font-weight:500;font-size:clamp(22px,2.4vw,30px);color:#efe6cf}
+.st small{letter-spacing:.03em}
+
+/* events: elegant numbered columns */
+.events{background:none}
+.ev-grid{gap:0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.ev{border:0;border-radius:0;background:none;padding:40px 26px 38px;border-inline-start:1px solid rgba(212,180,106,.14);transition:background .4s}
+.ev:first-child{border-inline-start:0}
+.ev:hover{background:linear-gradient(180deg,rgba(212,180,106,.07),transparent)}
+.ev::after{display:none}
+.ev::before{font-family:var(--caps);font-size:28px;letter-spacing:.05em;color:transparent;-webkit-text-stroke:1px rgba(212,180,106,.65)}
+.ev h3{font-size:22px;margin:18px 0 10px}
+.ev p{font-size:15px;line-height:1.7;color:#a9adb4}
+
+/* cinematic band */
+.band{position:relative;isolation:isolate;overflow:hidden;padding:170px 0;text-align:center;border-block:1px solid var(--hair)}
+.band-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;opacity:.7;transform:scale(1.06)}
+.band-shade{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 65% 70% at 50% 50%,rgba(9,10,12,.45),rgba(9,10,12,.9)),linear-gradient(180deg,var(--bg),transparent 18%,transparent 82%,var(--bg))}
+.band blockquote{font-size:clamp(40px,6vw,82px);font-weight:500;line-height:1.1;margin-bottom:26px}
+.band p{color:#cfd2d6;font-size:18px;max-width:560px;margin:0 auto;line-height:1.8}
+
+/* services */
+.cards{gap:1px;background:rgba(212,180,106,.16);border:1px solid rgba(212,180,106,.16)}
+.card{border:0;border-radius:0;background:#0d0e11;padding:42px 34px;transition:background .45s}
+.card:hover{transform:none;background:#121317}
+.card::before{background:radial-gradient(500px circle at var(--mx,50%) var(--my,50%),rgba(212,180,106,.10),transparent 45%)}
+.card::after{content:"";position:absolute;top:0;inset-inline-start:0;height:1px;width:0;background:var(--gold2);transition:width .6s ease}
+.card:hover::after{width:100%}
+.ico{background:none;border:0;width:auto;height:auto;margin-bottom:26px;display:block}
+.ico svg{width:34px;height:34px;stroke-width:1.2;stroke:var(--gold2)}
+.card h3{font-size:23px;margin-bottom:10px}
+.card p{line-height:1.7}
+
+/* why */
+.why{gap:1px;background:rgba(212,180,106,.16);border:1px solid rgba(212,180,106,.16)}
+.w{border:0;border-radius:0;background:#0d0e11;padding:40px 30px}
+.w .ln{width:28px;height:1px;background:var(--gold2);margin-bottom:24px}
+.w b{font-size:24px;font-weight:500;margin-bottom:10px}
+.w span{line-height:1.7}
+.legal{border-radius:0;margin-top:34px;padding:34px 38px;background:linear-gradient(120deg,rgba(212,180,106,.10),rgba(13,14,17,.9) 60%);border:1px solid var(--hair);outline:1px solid rgba(212,180,106,.12);outline-offset:6px}
+.legal-ico{border-radius:50%;width:64px;height:64px;background:none;border:1px solid var(--hair)}
+.legal-ico svg{stroke-width:1.3}
+.legal b{font-size:26px;font-weight:500}
+.legal span{line-height:1.8}
+
+/* AI */
+.ops{border-radius:6px;border-color:var(--hair);background:rgba(13,14,17,.85)}
+.msg{border-radius:4px}
+.feat li::before{box-shadow:none;width:6px;height:6px}
+
+/* contact */
+.contact{border-radius:0;padding:76px;background:linear-gradient(135deg,rgba(212,180,106,.09),rgba(13,14,17,.92) 55%);border:1px solid var(--hair);outline:1px solid rgba(212,180,106,.1);outline-offset:8px}
+#lead input,#lead select,#lead textarea{border:0;border-bottom:1px solid rgba(212,180,106,.3);border-radius:0;background:transparent;padding:16px 4px;font-size:16px}
+#lead input:focus,#lead select:focus,#lead textarea:focus{box-shadow:none;border-bottom-color:var(--gold3)}
+#lead select option{background:#121317}
+#lead .btn{margin-top:10px;background:linear-gradient(120deg,#e9d39b,#c9a659 45%,#a8823a);color:#140f05}
+.c-lines{gap:14px}
+.c-lines a,.c-lines span{font-family:var(--serif);font-size:17px}
+.jobs{border:1px solid rgba(212,180,106,.18);border-radius:0;margin-top:40px}
+
+/* footer */
+footer{padding:56px 0;border-top:1px solid var(--hair)}
+footer .brand{font-family:var(--serif)}
+
+/* wizard polish */
+.q-box{border-radius:6px}
+.q-chip,.q-count button{border-radius:2px}
+
+@media (max-width:1020px){.ev{border-inline-start:0;border-top:1px solid rgba(212,180,106,.14)} .ev:nth-child(-n+2){border-top:0} .ev:nth-child(even){border-inline-start:1px solid rgba(212,180,106,.14)}}
+@media (max-width:640px){
+  section{padding:96px 0}
+  .hero{padding:120px 0 110px}
+  .hero-meta{gap:10px;font-size:14px;flex-wrap:wrap}
+  .cta-row .btn{flex:1 1 100%}
+  .band{padding:120px 0}
+  .card,.w{padding:34px 24px}
+  .ev{padding:30px 18px}.ev:nth-child(2){border-top:1px solid rgba(212,180,106,.14)}.ev:nth-child(even){border-inline-start:0}
+  .contact{padding:40px 22px;outline-offset:4px}
+  .legal{padding:26px 22px;outline-offset:4px}
+  .brand{font-size:17px;gap:10px;white-space:nowrap}.brand small{letter-spacing:.2em;font-size:9px}
+  .eyebrow{letter-spacing:.28em;gap:10px}.eyebrow::before,.eyebrow::after{width:22px}
+}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .rv{opacity:1;transform:none}.msg{opacity:1;transform:none}
@@ -253,7 +395,7 @@ footer{padding:44px 0 40px;border-top:1px solid var(--line);color:var(--muted);f
 </style>
 </head>
 <body>
-<div class="bg-grid"></div><div class="orb a"></div><div class="orb b"></div>
+<div class="grain" aria-hidden="true"></div><div class="orb a"></div><div class="orb b"></div>
 
 <nav id="nav"><div class="wrap nav-in">
   <a href="#" class="brand"><img src="brown-logo-round.png" alt="לוגו בראון אבטחה"><span>בראון אבטחה<small class="en">BROWN SECURITY</small></span></a>
@@ -264,18 +406,17 @@ footer{padding:44px 0 40px;border-top:1px solid var(--line);color:var(--muted);f
 <header class="hero">
   <div class="hero-bg" aria-hidden="true"><video muted playsinline preload="auto"></video><video muted playsinline preload="none"></video></div>
   <div class="hero-shade" aria-hidden="true"></div>
-  <canvas id="net" aria-hidden="true"></canvas>
   <div class="wrap">
-    <div class="chip rv"><span class="dot"></span>זמינים עכשיו · 24/7 · בכל הארץ</div>
+    <div class="eyebrow hero-eye rv">Brown Security · Israel</div>
     <h1 class="rv d1">שומרים עליכם.<br><span class="gold">תמיד.</span></h1>
     <p class="lead rv d2">מאבטחים חמושים, בודקים ביטחוניים, סדרנים וצוותי התערבות, מאירועים והופעות ועד מבנים, מגדלים ובתי חולים. חברת אבטחה אחרת: צעירה, שירותית וזמינה כל הזמן.</p>
     <div class="cta-row rv d3">
       <a href="#quote" class="btn btn-gold" data-quote>קבלו הצעת מחיר ←</a>
-      <a href="https://wa.me/972505830496" class="btn btn-wa">WhatsApp</a>
-      <a href="tel:+972505830496" class="btn btn-ghost">חייגו עכשיו</a>
+      <a href="https://wa.me/972505830496" class="btn btn-ghost"><svg class="wa-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>WhatsApp</a>
     </div>
-
+    <div class="hero-meta rv d4"><span>זמינים 24/7</span><i></i><span>פריסה ארצית</span><i></i><span>מורשים ומבוטחים</span></div>
   </div>
+  <a href="#events" class="scroll-cue" aria-label="גלילה למטה"><span></span></a>
 </header>
 
 <div class="strip"><div class="wrap strip-in">
@@ -296,7 +437,17 @@ footer{padding:44px 0 40px;border-top:1px solid var(--line);color:var(--muted);f
   </div>
 </div></section>
 
-<section id="services" style="padding-top:40px"><div class="wrap">
+<section class="band" aria-label="ליווי אמנים">
+  <video class="band-v" muted playsinline loop preload="none" data-src="videos/scene-2.mp4" aria-hidden="true"></video>
+  <div class="band-shade" aria-hidden="true"></div>
+  <div class="wrap band-in rv">
+    <div class="eyebrow">Artist &amp; VIP Protection</div>
+    <blockquote>נוכחות שקטה.<br><span class="gold">ביטחון מלא.</span></blockquote>
+    <p>ליווי צמוד לאמנים ולאישים, בדיסקרטיות ובמקצועיות, מהרגע שהם יוצאים מהרכב ועד שהם חוזרים אליו.</p>
+  </div>
+</section>
+
+<section id="services"><div class="wrap">
   <div class="sec-head rv"><div class="eyebrow">Services</div><h2>כל שירותי <span class="gold">האבטחה</span></h2><p class="sec-lead">מאבטחים חמושים, שומרים, בודקים, סדרנים וצוותי התערבות, לכל סוג של מקום ואירוע.</p></div>
   <div class="cards">
     <div class="card rv"><div class="ico"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div><h3>אבטחת אירועים</h3><p>כנסים, הופעות, הפקות ואירועים פרטיים ועסקיים.</p></div>
@@ -486,6 +637,12 @@ const $ = id => document.getElementById(id);
   new IntersectionObserver(es=>{ const on = es[0].isIntersecting; on ? cur.play().catch(()=>{}) : cur.pause(); }).observe(document.querySelector('.hero'));
 })();
 
+/* ---------- cinematic band video ---------- */
+(function(){ const v = document.querySelector('.band-v'); if (!v) return;
+  new IntersectionObserver(es=>{ const on = es[0].isIntersecting;
+    if (on && !v.getAttribute('src')) { v.src = v.dataset.src; }
+    if (on && !reduce) v.play().catch(()=>{}); else v.pause(); }, {rootMargin:'200px'}).observe(v); })();
+
 /* ---------- page ---------- */
 $("callBtn").addEventListener("click", () => { $("callBtn").hidden = true; document.querySelector(".nav-in").classList.add("num-on"); $("callNum").hidden = false; $("callNum").focus(); });
 const nav = $('nav'); addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20), {passive:true});
@@ -505,21 +662,7 @@ $('lead').addEventListener('submit', e => { e.preventDefault();
   window.open('https://wa.me/972505830496?text=' + encodeURIComponent(m), '_blank');
 });
 
-/* gold particle network */
-const cv = $('net'), cx = cv.getContext('2d'); let W, H, pts = [], mouse = {x:-999,y:-999};
-function size(){ const d = Math.min(devicePixelRatio||1, 2); W = cv.clientWidth; H = cv.clientHeight; cv.width = W*d; cv.height = H*d; cx.setTransform(d,0,0,d,0,0);
-  pts = Array.from({length: Math.min(80, Math.floor(W*H/18000))}, () => ({x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-.5)*.3, vy:(Math.random()-.5)*.3})); }
-addEventListener('resize', size); size();
-cv.parentElement.addEventListener('pointermove', e => { const r = cv.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; });
-(function draw(){
-  cx.clearRect(0,0,W,H);
-  for (const p of pts){ p.x += p.vx; p.y += p.vy; if (p.x<0||p.x>W) p.vx*=-1; if (p.y<0||p.y>H) p.vy*=-1;
-    const dm = Math.hypot(p.x-mouse.x, p.y-mouse.y); if (dm < 140){ p.x += (p.x-mouse.x)/dm*.6; p.y += (p.y-mouse.y)/dm*.6; } }
-  for (let i=0;i<pts.length;i++) for (let j=i+1;j<pts.length;j++){ const a=pts[i], b=pts[j], d=Math.hypot(a.x-b.x,a.y-b.y);
-    if (d<130){ cx.strokeStyle = `rgba(212,180,106,${(1-d/130)*.25})`; cx.beginPath(); cx.moveTo(a.x,a.y); cx.lineTo(b.x,b.y); cx.stroke(); } }
-  for (const p of pts){ cx.fillStyle = 'rgba(243,223,162,.75)'; cx.beginPath(); cx.arc(p.x,p.y,1.5,0,7); cx.fill(); }
-  if (!reduce) requestAnimationFrame(draw);
-})();
+
 </script>
 <script>
 (function () {
