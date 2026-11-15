@@ -397,6 +397,22 @@ footer .brand{font-family:var(--serif)}
   .eyebrow{letter-spacing:.1em;gap:10px;font-size:14px}.eyebrow::before,.eyebrow::after{width:20px}
 }
 
+
+/* logo: glowing story-style ring */
+.ring{position:relative;flex:none;width:66px;height:66px;border-radius:50%;display:grid;place-items:center;isolation:isolate}
+.ring::before{content:"";position:absolute;inset:0;border-radius:50%;z-index:-1;background:conic-gradient(from 0deg,#fff3c9,#d4b46a,#8a6526,#f3dfa2,#b08a3e,#fff3c9);animation:ringspin 5s linear infinite}
+.ring::after{content:"";position:absolute;inset:-12px;border-radius:50%;z-index:-2;background:radial-gradient(circle,rgba(255,236,170,.75),rgba(212,180,106,.25) 45%,rgba(212,180,106,0) 72%);filter:blur(8px);animation:ringglow 3s ease-in-out infinite}
+.ring img{width:57px!important;height:57px!important;border-radius:50%;border:3px solid #0b0c0e;box-shadow:none!important;filter:brightness(1.18) contrast(1.05) saturate(1.1)}
+.brand:hover .ring::before{animation-duration:1.6s}
+@keyframes ringspin{to{transform:rotate(360deg)}}
+@keyframes ringglow{0%,100%{opacity:.55;transform:scale(.96)}50%{opacity:1;transform:scale(1.08)}}
+nav .nav-in{height:84px}
+nav{background:linear-gradient(180deg,rgba(9,10,12,.75),rgba(9,10,12,0))}
+nav.scrolled{background:rgba(9,10,12,.86)}
+.links a{color:#c9c3b3}
+.links a:hover{color:var(--gold3)}
+@media (max-width:640px){.ring{width:48px;height:48px}.ring img{width:41px!important;height:41px!important;border-width:2.5px}}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .rv{opacity:1;transform:none}.msg{opacity:1;transform:none}
@@ -407,7 +423,7 @@ footer .brand{font-family:var(--serif)}
 <div class="grain" aria-hidden="true"></div><div class="orb a"></div><div class="orb b"></div>
 
 <nav id="nav"><div class="wrap nav-in">
-  <a href="#" class="brand"><img src="brown-logo-round.png" alt="לוגו בראון אבטחה"><span>בראון אבטחה<small class="en">BROWN SECURITY</small></span></a>
+  <a href="#" class="brand"><span class="ring"><img src="brown-logo-round.png" alt="לוגו בראון אבטחה"></span><span>בראון אבטחה<small class="en">BROWN SECURITY</small></span></a>
   <div class="links"><a href="#services">שירותים</a><a href="#events">אירועים והופעות</a><a href="#why">למה בראון</a><a href="#ai">Brown AI</a><a href="#contact">צור קשר</a></div>
   <div class="nav-cta"><button type="button" class="btn btn-ghost call-btn" id="callBtn" aria-label="הצגת מספר הטלפון"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>התקשרו</span></button><a class="tel call-num" id="callNum" href="tel:+972505830496" hidden>050-5830496</a><a href="#quote" class="btn btn-gold" data-quote>הצעת מחיר</a></div>
 </div></nav>
