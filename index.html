@@ -124,6 +124,12 @@ h2{font-size:clamp(32px,4.4vw,56px);line-height:1.1;font-weight:900;margin-botto
 .w b{display:block;font-size:22px;margin-bottom:6px}
 .w span{color:var(--muted)}
 .w .ln{width:40px;height:3px;border-radius:3px;background:var(--grad);margin-bottom:18px}
+.legal{display:flex;gap:20px;align-items:center;margin-top:22px;padding:26px 30px;border-radius:var(--r);border:1px solid rgba(212,180,106,.4);background:linear-gradient(135deg,rgba(212,180,106,.12),rgba(30,32,37,.6))}
+.legal-ico{flex:none;width:58px;height:58px;border-radius:16px;display:grid;place-items:center;background:rgba(212,180,106,.15);border:1px solid rgba(212,180,106,.45)}
+.legal-ico svg{width:30px;height:30px;stroke:var(--gold3);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.legal b{display:block;font-size:22px;margin-bottom:4px}
+.legal span{color:#cfd2d6}
+@media (max-width:640px){.legal{flex-direction:column;align-items:flex-start;padding:22px}}
 
 /* AI */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
@@ -312,6 +318,10 @@ footer{padding:44px 0 40px;border-top:1px solid var(--line);color:var(--muted);f
     <div class="w rv d1"><div class="ln"></div><b>שירותיים באמת</b><span>מענה אנושי ואישי, בלי סחבת.</span></div>
     <div class="w rv d2"><div class="ln"></div><b>זמינים 24/7</b><span>גם בלילה, בסופ"ש ובחגים, בכל הארץ.</span></div>
     <div class="w rv d3"><div class="ln"></div><b>ליווי והדרכה</b><span>צוותי שטח שמקבלים הדרכה וליווי שוטפים.</span></div>
+  </div>
+  <div class="legal rv">
+    <div class="legal-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+    <div><b>מורשים ומבוטחים, כחוק</b><span>בראון אבטחה פועלת עם כל הרישיונות, ההיתרים והביטוחים הנדרשים על פי חוק. כך אתם מקבלים שירות אבטחה מקצועי, חוקי ומגובה, ויכולים לעבוד איתנו בראש שקט.</span></div>
   </div>
 </div></section>
 
