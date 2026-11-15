@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>בראון אבטחה</title>
+<script>
+// Every page other than the home page belonged to the BRNO app, which moved to
+// www.brno.co.il. Links already sent (WhatsApp buttons, emails) keep working.
+(function () {
+  var l = window.location;
+  window.location.replace('https://www.brno.co.il' + l.pathname + l.search + l.hash);
+})();
+</script>
+<style>
+  :root { --bg: #0E0F11; --text: #F1F2F4; --gold: #D4B46A; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--bg); color: var(--text); font: 18px Arial, sans-serif; text-align: center; padding: 16px; }
+  a { color: var(--gold); }
+</style>
+</head>
+<body>
+<p>מעבירים אותך למערכת BRNO…<br><a href="https://www.brno.co.il">www.brno.co.il</a></p>
+</body>
+</html>
